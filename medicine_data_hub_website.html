@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Medicine Data Hub | Affordable Data Bundles</title>
+<meta name="description" content="Medicine Data Hub — affordable MTN and Telecel data bundles delivered directly to your number.">
+<style>
+:root{
+  --navy:#08243a; --blue:#0b6bcb; --cyan:#13b8d4; --green:#18a66a;
+  --light:#f4f9fc; --dark:#10212e; --white:#fff; --muted:#637381;
+  --shadow:0 14px 40px rgba(8,36,58,.10);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:Inter,Arial,sans-serif;background:var(--light);color:var(--dark);line-height:1.6}
+a{text-decoration:none;color:inherit}
+.container{width:min(1120px,92%);margin:auto}
+header{background:rgba(255,255,255,.96);position:sticky;top:0;z-index:10;border-bottom:1px solid #e7eef3}
+.nav{height:72px;display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;color:var(--navy)}
+.logo-mark{width:40px;height:40px;border-radius:12px;background:linear-gradient(135deg,var(--blue),var(--cyan));display:grid;place-items:center;color:#fff;font-weight:900}
+.nav-links{display:flex;gap:26px;align-items:center;font-size:.95rem}
+.nav-links a:hover{color:var(--blue)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:0;border-radius:12px;padding:13px 20px;font-weight:800;cursor:pointer}
+.btn-primary{background:var(--blue);color:#fff;box-shadow:0 8px 20px rgba(11,107,203,.22)}
+.btn-primary:hover{background:#095ba9}
+.btn-light{background:#fff;color:var(--navy)}
+.hero{padding:78px 0 55px;background:
+ radial-gradient(circle at 85% 15%,rgba(19,184,212,.22),transparent 30%),
+ linear-gradient(135deg,#eaf7ff 0%,#fff 58%,#eefbf6 100%)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.badge{display:inline-block;background:#dff5ec;color:#08764a;padding:7px 12px;border-radius:999px;font-size:.82rem;font-weight:800;margin-bottom:18px}
+h1{font-size:clamp(2.3rem,5vw,4.6rem);line-height:1.03;letter-spacing:-2px;color:var(--navy);margin-bottom:20px}
+.hero p{font-size:1.12rem;color:var(--muted);max-width:650px;margin-bottom:28px}
+.hero-actions{display:flex;gap:12px;flex-wrap:wrap}
+.hero-card{background:var(--white);border-radius:28px;padding:28px;box-shadow:var(--shadow);border:1px solid #e4eef5}
+.phone{background:var(--navy);border-radius:24px;padding:16px;color:#fff}
+.phone-screen{background:#f7fbfe;border-radius:18px;padding:20px;color:var(--dark)}
+.mini-brand{font-weight:900;color:var(--blue);margin-bottom:18px}
+.stat-row{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.stat{background:#fff;border-radius:14px;padding:14px;border:1px solid #e8eef2}
+.stat strong{display:block;color:var(--navy);font-size:1.15rem}
+section{padding:70px 0}
+.section-title{text-align:center;margin-bottom:38px}
+.section-title h2{font-size:2rem;color:var(--navy)}
+.section-title p{color:var(--muted);margin-top:7px}
+.features{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.feature{background:#fff;border-radius:18px;padding:25px;box-shadow:var(--shadow)}
+.icon{width:46px;height:46px;border-radius:14px;background:#e9f5ff;color:var(--blue);display:grid;place-items:center;font-size:1.3rem;margin-bottom:14px}
+.feature h3{margin-bottom:6px;color:var(--navy)}
+.feature p{color:var(--muted);font-size:.95rem}
+.packages{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.package{background:#fff;border:1px solid #e4edf2;border-radius:18px;padding:22px;box-shadow:0 8px 25px rgba(8,36,58,.06)}
+.network{font-size:.75rem;font-weight:900;color:var(--blue);text-transform:uppercase;letter-spacing:.6px}
+.package h3{font-size:1.45rem;margin:6px 0}
+.price{font-size:1.8rem;font-weight:900;color:var(--navy);margin:8px 0}
+.package small{color:var(--muted);display:block;margin-bottom:15px}
+.package .btn{width:100%}
+.highlight{border:2px solid var(--green);position:relative}
+.popular{position:absolute;right:14px;top:14px;background:#dff5ec;color:#08764a;padding:4px 8px;border-radius:999px;font-size:.7rem;font-weight:900}
+.cta{background:linear-gradient(135deg,var(--navy),#0b537a);color:#fff;border-radius:28px;padding:48px;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.cta h2{font-size:2rem;margin-bottom:8px}
+.cta p{opacity:.82}
+footer{background:#061b2b;color:#c8d7e2;padding:35px 0}
+.footer-grid{display:flex;justify-content:space-between;gap:25px;flex-wrap:wrap}
+footer strong{color:#fff}
+footer p{font-size:.9rem;margin-top:6px}
+@media(max-width:800px){
+ .nav-links{display:none}.hero-grid{grid-template-columns:1fr}.hero-card{max-width:520px;margin:auto}
+ .features,.packages{grid-template-columns:1fr 1fr}.cta{flex-direction:column;align-items:flex-start}
+}
+@media(max-width:520px){.features,.packages{grid-template-columns:1fr}section{padding:52px 0}.hero{padding-top:55px}h1{letter-spacing:-1px}.cta{padding:30px}}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="logo" href="#home"><span class="logo-mark">MD</span> Medicine Data Hub</a>
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#packages">Packages</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#reseller">Reseller</a>
+      <a class="btn btn-primary" href="https://mzguest.researchershubgh.com/buy/B7AQYO1336" target="_blank" rel="noopener">Buy Data</a>
+    </nav>
+  </div>
+</header>
+
+<main id="home">
+<section class="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="badge">FAST • AFFORDABLE • DIRECT DELIVERY</span>
+      <h1>Stay connected without the stress.</h1>
+      <p>Welcome to <strong>Medicine Data Hub</strong>. Choose an affordable data bundle and have it delivered directly to your number.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="https://mzguest.researchershubgh.com/buy/B7AQYO1336" target="_blank" rel="noopener">Buy a Data Bundle →</a>
+        <a class="btn btn-light" href="#packages">View Packages</a>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="phone">
+        <div class="phone-screen">
+          <div class="mini-brand">Medicine Data Hub</div>
+          <p><strong>Instant data, no stress.</strong></p>
+          <div class="stat-row">
+            <div class="stat"><strong>14+</strong><span>Packages</span></div>
+            <div class="stat"><strong>24/7</strong><span>Online ordering</span></div>
+          </div>
+          <a class="btn btn-primary" style="width:100%;margin-top:15px" href="https://mzguest.researchershubgh.com/buy/B7AQYO1336" target="_blank" rel="noopener">Shop Now</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="why-us">
+  <div class="container">
+    <div class="section-title">
+      <h2>Why choose Medicine Data Hub?</h2>
+      <p>Simple data buying, designed for everyday connectivity.</p>
+    </div>
+    <div class="features">
+      <div class="feature"><div class="icon">⚡</div><h3>Fast delivery</h3><p>Your purchased bundle is delivered directly to the number you provide.</p></div>
+      <div class="feature"><div class="icon">₵</div><h3>Affordable bundles</h3><p>Choose from a range of data packages to match your budget and usage.</p></div>
+      <div class="feature"><div class="icon">🔒</div><h3>Secure checkout</h3><p>Complete your purchase through the secure checkout on our official ordering page.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="packages">
+  <div class="container">
+    <div class="section-title">
+      <h2>Popular data packages</h2>
+      <p>Prices shown from the current Medicine Data Hub ordering page.</p>
+    </div>
+    <div class="packages">
+      <div class="package"><span class="network">MTN</span><h3>1 GB</h3><div class="price">GH₵ 4.60</div><small>No expiry • Direct delivery</small><a class="btn btn-primary" href="https://mzguest.researchershubgh.com/buy/B7AQYO1336" target="_blank" rel="noopener">Buy 1 GB</a></div>
+      <div class="package highlight"><span class="popular">POPULAR</span><span class="network">MTN</span><h3>2 GB</h3><div class="price">GH₵ 9.50</div><small>No expiry • Direct delivery</small><a class="btn btn-primary" href="https://mzguest.researchershubgh.com/buy/B7AQYO1336" target="_blank" rel="noopener">Buy 2 GB</a></div>
+      <div class="package"><span class="network">MTN</span><h3>5 GB</h3><div class="price">GH₵ 23.00</div><small>No expiry • Everyday use</small><a class="btn btn-primary" href="https://mzguest.researchershubgh.com/buy/B7AQYO1336" target="_blank" rel="noopener">Buy 5 GB</a></div>
+      <div class="package"><span class="network">MTN</span><h3>10 GB</h3><div class="price">GH₵ 44.00</div><small>No expiry • Better value</small><a class="btn btn-primary" href="https://mzguest.researchershubgh.com/buy/B7AQYO1336" target="_blank" rel="noopener">Buy 10 GB</a></div>
+      <div class="package"><span class="network">MTN</span><h3>15 GB</h3><div class="price">GH₵ 60.00</div><small>No expiry • Better value</small><a class="btn btn-primary" href="https://mzguest.researchershubgh.com/buy/B7AQYO1336" target="_blank" rel="noopener">Buy 15 GB</a></div>
+      <div class="package"><span class="network">Telecel</span><h3>20 GB</h3><div class="price">GH₵ 84.00</div><small>No expiry • Direct delivery</small><a class="btn btn-primary" href="https://mzguest.researchershubgh.com/buy/B7AQYO1336" target="_blank" rel="noopener">Buy 20 GB</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="reseller">
+  <div class="container">
+    <div class="cta">
+      <div>
+        <h2>Want to become a reseller?</h2>
+        <p>Sign up as a sub-agent under Medicine Data Hub and start selling at your own prices.</p>
+      </div>
+      <a class="btn btn-light" href="https://mzguest.researchershubgh.com/buy/B7AQYO1336" target="_blank" rel="noopener">Get Started →</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-grid">
+    <div><strong>Medicine Data Hub</strong><p>Instant data, no stress.</p></div>
+    <div><p>© 2026 Medicine Data Hub. All rights reserved.</p></div>
+  </div>
+</footer>
+
+</body>
+</html>
